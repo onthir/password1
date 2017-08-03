@@ -2,6 +2,8 @@ import time
 import random
 from tkinter import *
 
+
+
 #password strength checker and strong password generator app.
 #Requisites: Length=8, Symbols=at least 1, Numbers= 2, Capital Letters 2 and small letters: 3+
 while True:
@@ -125,10 +127,10 @@ while True:
 			print("Decent Password but can be made more strong.")
 		print(total_percentage)
 		ask = input("Do you want to generate a strong password? (y/n) \n")
-		if ask == "y":
+		if ask == "y" or ask == "Y":
 			root =Tk()
 			root.title("Password Generator")
-			root.geometry("1200x720+0+0")	
+			root.geometry("1920x1080+0+0")	
 
 			heading = Label(root, text = "Welcome to Password Generator.", font=('arial 40 bold'), fg="steelblue").pack()
 
@@ -139,7 +141,51 @@ while True:
 			symbols_lst = ['`','~','!','@','#','$','%','^','&','*','(',')','_','-','=','+','|','}','{',']',
 			'[',':',';','"',"'",'/','?','>','<','.',',']
 
+			new1 = random.choice(alpha)
+			new2 = random.choice(small)
+			new3 = random.choice(numbers)
+			new4 = random.choice(numbers)
+			new5 = random.choice(small)
+			new6 = random.choice(symbols_lst)
+			new7 = random.choice(alpha)
+			new8 = random.choice(symbols_lst)
+			new9 = random.choice(small)
+			new10 = random.choice(small)
+			new11 = random.choice(numbers)
+			new12 = random.choice(small)
+			new13 = random.choice(alpha)
+			new14 = random.choice(symbols_lst)
+			new15 = random.choice(symbols_lst)
 			
+			total_new = new1 + new2 +new3 +new4 +new5 +new6 +new7 +new8  +new9 +new10 +new11 +new12 +new13 +new14 +new15  
+
+			def calculate():
+				label1 = Label(root, text=total_new, font=('arial 40 bold'), fg='green').place(x= 500, y=300)
+			def create():
+				file = open("password.txt", "w")
+				file.write(str(total_new) + " is your new password.")
+				file.close()
+				lllb = Label(root, text= "Sucessfully created Text File.").place(x=600 , y=570)
+			def composition():
+				nn = ("Numbers: " + str(total_numbers))
+				nn1 = ("Symbols: " + str(total_characters))
+				nn2 = ("Capital Letters: " + str(capital_letters))
+				nn3 = ("Spaces: " + str(space))
+				nn4 = ("Small Letters: " + str(len(password)-(total_numbers+total_characters+capital_letters+space)))
+
+				new_lb = (nn + "   |" + nn1 + "    |" + nn2 + "    |" + nn3 + "    |" + nn4)
+				llb = Label(root, text=new_lb, font=('arial 20 bold'), fg="red").place(x =60, y=600)
+			def quit():
+				root.destroy()
+			rule = Label(root, text="Here are the steps: ", font=('arial 20 bold'), fg="black").place(x=60, y=90)
+			rule1 = Label(root, text="1. GENERATE will create a very strong password for you only once. ", font=('arial 20 bold'), fg="black").place(x=60, y=130)
+			rule2 = Label(root, text="2. CREATE will create a text file with password in it.", font=('arial 20 bold'), fg="black").place(x=60, y=160)
+			rule3 = Label(root, text="3. COMPOSITION will show the composition of your previous password.", font=('arial 20 bold'), fg="black").place(x=60, y=190)
+
+			btn1 = Button(root, text="Generate Password", width=30, height=3, bg="lightgreen", command=calculate).place(x=200, y=500)
+			btn2 = Button(root, text="Create a Text File", width=30, height=3, bg="red", command=create).place(x=600, y=500)
+			btn = Button(root, text="My Password Composition", width=30, height=3, bg="orange", command=composition).place(x=1000, y=500)
+			btn_lst = Button(root, text="Exit", width=30, height=3, command=quit).place(x=600, y=800)
 
 			#------------------------------ends--------------------------------
 
