@@ -64,9 +64,7 @@ while True:
 		char30 = password.count('<')
 		char31 = password.count(',')
 
-		total_characters = char1 + char2 + char3+ char4+ char5+ char6+ char7+ char8+ char9+ char10+ char11+ char12+ char13
-		+ char14+ char15+ char16+ char17+ char18+ char19+ char20+ char21+ char22+ char23+ char24+ char25+ char26+ char27+ char28
-		+ char29+ char30+ char31
+		total_characters = char1 + char2 + char3+ char4+ char5+ char6+ char7+ char8+ char9+ char10+ char11+ char12+ char13+ char14+ char15+ char16+ char17+ char18+ char19+ char20+ char21+ char22+ char23+ char24+ char25+ char26+ char27+ char28+ char29+ char30+ char31
 
 
 	    # counting for the charactes ends here.
